@@ -31,6 +31,14 @@
   font-size: 20px;
   
 }
+.dic-list .list .delete {
+  width: 60px;
+  height: 60px;
+  
+  margin-left: 400px;
+  background-image: url(./delete.png);
+  background-size: 60px;
+}
 .dic-list button {
   margin-left: 500px;
   background-image:url("./plus.png");
@@ -38,7 +46,7 @@
   height: 70px;
   border-radius: 50%;
   cursor: pointer;
-  position: absolute;
+  
   left: 5px;
   bottom: 30px;
 }

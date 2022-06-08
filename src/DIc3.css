@@ -1,0 +1,45 @@
+.input {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #7FFFD4;
+  border: 1px solid #7FFFD4;
+  border-radius: 10px;
+  background-color: #7FFFD4;
+  
+}
+.input ul{
+  padding: 10px;
+  
+}
+.input ul li{
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  border: 1px solid #7FFFD4;
+  border-radius: 10px;
+  background-color: #FFF;
+  margin-bottom: 30px;
+  padding: 10px;
+  
+}
+.input ul li span{
+  text-decoration: underline;
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.input button {
+  margin-bottom:50px;
+  width: 570px;
+  height: 40px;
+  margin-left:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: purple;
+  color: #FFF;
+  font-size: 20px;
+  margin-left: 10px;
+}

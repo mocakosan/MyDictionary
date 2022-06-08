@@ -1,9 +1,9 @@
 import React, { Component,useCallback, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link,useNavigate,useParams } from "react-router-dom";
 import {useSelector,useDispatch} from "react-redux";
 import "../Dic1.css";
 import axios from "axios";
-import {setDic,dic} from "../redux/modules/dic";
+import {setDic,dic,deleteDic} from "../redux/modules/dic";
 
 function Dic1(props) {
   const [words, setWords] = useState(false);
@@ -23,7 +23,14 @@ function Dic1(props) {
   };
   const new_dic_list = useSelector((state) => state.dic.dic);
   
- 
+  const ondelete = (id) =>{
+    dispatch(deleteDic(id));
+    
+    // history.goBack();
+  }
+ const onupdate = (id) =>{
+
+ }
 
   React.useEffect(() => {
     if(new_dic_list.length <= 1)
@@ -37,23 +44,29 @@ function Dic1(props) {
     <div className="dic-list">
       <h1 style={{color:"white"}}>My Dictionary</h1>
       
-       {new_dic_list.map((e,i) => {
+       {new_dic_list.map((e,idx) => {
          
         return (
-      <div className="list" key={i}>
-        <span>단어</span>
+      <div className="list" key={idx}>
+        <button onClick={()=>ondelete(idx)} className="delete"></button>
         
+        <span>id</span>
+        <p>{idx}</p> 
+        <span>단어</span>
         <p>{e.list}</p>
         <span>설명</span>
         <p>{e.explanation}</p>
         <span>예시</span>
-        <p style={{color:"blue"}}>{e.example}</p>       
+        <p style={{color:"blue"}}>{e.example}</p>
+              
       </div>
         )
       })} 
+      
       <Link to="/Dic2">
         <button></button>
       </Link>
+      
     </div>
   
   )
